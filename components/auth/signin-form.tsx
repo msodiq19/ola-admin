@@ -37,7 +37,7 @@ export function SignInForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
 
         {/* Email Field */}
         <FormField
@@ -69,7 +69,7 @@ export function SignInForm() {
           )}
         />
 
-        <Button type="submit" className="w-full">Submit</Button>
+        <Button type="submit" className="w-full bg-[#0BA5EC]">Submit</Button>
       </form>
     </Form>
   )

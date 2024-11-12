@@ -3,7 +3,7 @@ import React from "react";
 
 export function AuthAside() {
   return (
-    <div className="relative lg:w-[720px] h-screen overflow-hidden">
+    <div className="relative lg:w-1/2 hidden lg:block h-screen overflow-hidden">
       <Image
         src={"/images/portrait-happy-young-woman.png"}
         alt="happy-woman"
