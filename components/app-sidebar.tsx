@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react"
 
 import {
@@ -12,14 +13,15 @@ import {
 } from "@/components/ui/sidebar"
 import Logo from "./logo"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
-import { BadgeCheck, Home, User } from "lucide-react"
+import { BadgeCheck, Bell, CircleDollarSign, Home, Ratio, SquareKanban, User } from "lucide-react"
+import { usePathname } from "next/navigation"
 
-// This is sample data.
+
 const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/",
       icon: Home,
       items: [],
     },
@@ -32,17 +34,33 @@ const data = {
     {
       title: "Vendor Management",
       url: "#",
+      icon: Ratio,
       items: [],
     },
     {
       title: "Transactions",
       url: "#",
+      icon: CircleDollarSign,
+      items: [],
+    },
+    {
+      title: "Analytic & Reporting",
+      url: "#",
+      icon: SquareKanban,
+      items: [],
+    },
+    {
+      title: "Notifications",
+      url: "#",
+      icon: Bell,
       items: [],
     },
   ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname()
+
   return (
     <Sidebar {...props}>
       <SidebarHeader className="mx-8 mt-4">
@@ -51,8 +69,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent className="mx-4 mt-8">
         {data.navMain.map((item) => (
           <SidebarMenuItem key={item.title}>
-            <SidebarMenuButton asChild>
-            <a href={item.url} className="pl-4">{item.title}</a>
+            <SidebarMenuButton asChild isActive={pathname === item.url}>
+              <a href={item.url} className="pl-4">
+                <item.icon />
+                {item.title}
+              </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
         ))}

@@ -12,6 +12,8 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ data }) => {
   const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);
 
+  console.log(selectedTransaction);
+
   const handleToggleMenu = (transaction: Transaction) => {
     setSelectedTransaction(transaction);
   };

@@ -8,7 +8,7 @@ export default function Page() {
     <div className="h-screen overflow-hidden w-full items-center justify-center px-4">
         <div className="w-[90%] my-8 mx-auto flex justify-between items-center">
            <Logo height={60} width={60} /> 
-           <p>Already have an account? <Link href='/auth/signin' className="underline text-blue-600">Sign In</Link></p>
+           <p>Already have an account? <Link href='/signin' className="underline text-blue-600">Sign In</Link></p>
         </div>
         <div className="flex items-center flex-col text-center mt-12">
             <Image src={'/custom-login-icon.svg'} alt="profile" height={50} width={50} />
