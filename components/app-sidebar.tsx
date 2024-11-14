@@ -27,7 +27,7 @@ const data = {
     },
     {
       title: "User Management",
-      url: "#",
+      url: "/user-management",
       icon: User,
       items: [],
     },
@@ -68,9 +68,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent className="mx-4 mt-8">
         {data.navMain.map((item) => (
-          <SidebarMenuItem key={item.title}>
+          <SidebarMenuItem key={item.title} className="flex items-center">
+            {pathname === item.url && <div className="w-[4px] h-[20px] bg-[#0BA5EC] rounded-tr-[4px] rounded-br-[4px]"></div>}
             <SidebarMenuButton asChild isActive={pathname === item.url}>
-              <a href={item.url} className="pl-4">
+              <a href={item.url} className="ml-4">
                 <item.icon />
                 {item.title}
               </a>
