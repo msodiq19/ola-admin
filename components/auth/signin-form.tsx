@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import { useAuth } from "@/contexts/auth-context"
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
@@ -32,9 +33,11 @@ export function SignInForm() {
       password: ""
     },
   })
+  const { authenticateUser } = useAuth();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
+    authenticateUser({email: values.email, token: "token"});
   }
 
   return (

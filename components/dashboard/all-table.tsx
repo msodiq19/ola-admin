@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import { ChevronsUpDown, EllipsisVertical } from 'lucide-react';
+import { EllipsisVertical } from 'lucide-react';
 import { Transaction } from '@/lib/types';
+import Image from 'next/image';
 
 
 
@@ -23,14 +24,14 @@ const Table: React.FC<TableProps> = ({ data }) => {
       <table className="w-full table-auto text-sm">
         <thead>
           <tr className="bg-[#E0F2FE]">
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Transaction ID <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Transaction Type <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Date & Time <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866]'>Amount <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>UserName <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>VendorName <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866]'>Exc. Rate <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Status <ChevronsUpDown size={16} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Transaction ID <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Transaction Type <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Date & Time <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866]'>Amount <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>UserName <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>VendorName <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866]'>Exc. Rate <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Status <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
             <th className="py-2 text-center"></th>
           </tr>
         </thead>

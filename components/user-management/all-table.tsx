@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import { BadgeCheck, ChevronsUpDown, EllipsisVertical } from 'lucide-react';
+import { BadgeCheck, EllipsisVertical } from 'lucide-react';
 import { UserInfo } from '@/lib/types';
+import Image from 'next/image';
 
 
 
@@ -23,14 +24,14 @@ const Table: React.FC<TableProps> = ({ data }) => {
       <table className="min-w-full table-auto text-sm">
         <thead>
           <tr className="bg-[#E0F2FE]">
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>User ID <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Name <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Email Address <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Verification <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Last Login <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Total Transactions <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Excrow Status <ChevronsUpDown size={16} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Flagged <ChevronsUpDown size={16} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>User ID <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Name <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Email Address <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Verification <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Last Login <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Total Transactions <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Excrow Status <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Flagged <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
             <th className="py-2 text-center"></th>
           </tr>
         </thead>
@@ -44,16 +45,18 @@ const Table: React.FC<TableProps> = ({ data }) => {
               <td className="px-4 py-2 text-left whitespace-nowrap">{user.name}</td>
               <td className="px-4 py-2 text-left whitespace-nowrap">{user.emailAddress}</td>
               <td
-                className={`px-4 py-4 text-left flex items-center gap-1 ${
-                  user.verification === 'Verified'
-                    ? 'text-green-500'
-                    : user.verification === 'Unverified'
-                    ? 'text-red-500'
-                    : 'text-yellow-500'
-                } whitespace-nowrap`}
+                className={`px-4 py-4 text-left whitespace-nowrap`}
               >
-                <BadgeCheck size={12} />
-                {user.verification}
+                <span className={`flex items-center gap-1 py-1 px-2 rounded-sm ${
+                  user.verification === 'Verified'
+                    ? 'text-[#039855] bg-[#F6FEF9]'
+                    : user.verification === 'Unverified'
+                    ? 'text-[#C1861E] bg-[#FFF7EA]'
+                    : 'text-yellow-500'
+                }`}>
+                  <BadgeCheck size={12} />
+                  {user.verification}
+                </span>
               </td>
               <td className="px-4 py-2 text-left whitespace-nowrap">{user.lastLogin}</td>
               <td className="px-4 py-2 text-left whitespace-nowrap">{user.totalTransactions}</td>

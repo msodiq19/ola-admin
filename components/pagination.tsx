@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from './ui/pagination';
 
 interface PaginationProps {
   currentPage: number;
@@ -7,7 +8,7 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({
+const PaginationComp: React.FC<PaginationProps> = ({
   currentPage,
   totalPages,
   onPageChange,
@@ -18,10 +19,31 @@ const Pagination: React.FC<PaginationProps> = ({
   console.log(currentPage, totalPages, handlePageChange(1))
 
   return (
-    <div className="flex justify-center mt-6">
-      
-    </div>
+    <Pagination>
+    <PaginationContent>
+      <PaginationItem>
+        <PaginationPrevious href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#" isActive>
+          2
+        </PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">3</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationEllipsis />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationNext href="#" />
+      </PaginationItem>
+    </PaginationContent>
+  </Pagination>
   );
 };
 
-export default Pagination;
+export default PaginationComp;

@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function Page() {
   return (
-    <div className="h-screen overflow-hidden w-full items-center justify-center px-4">
+    <div className="w-full h-screen overflow-x-hidden items-center justify-center px-4">
         <div className="w-[90%] my-8 mx-auto flex justify-between items-center">
            <Logo height={60} width={60} /> 
            <p>Already have an account? <Link href='/signin' className="underline text-blue-600">Sign In</Link></p>
@@ -20,7 +20,7 @@ export default function Page() {
         <div className="w-[90%] md:w-[50%] mx-auto mt-6">
             <SignUpForm />
         </div>
-        <div className="w-[90%] md:w-[50%] mx-auto mt-6 flex gap-4">
+        <div className="w-[90%] md:w-[50%] mx-auto my-6 flex gap-4">
             <span className="flex-1 inline-flex justify-center py-1 rounded-lg border border-stroke">
                 <Image src={'/icons/apple-logo.svg'} alt="apple-logo" height={20} width={20} />
             </span>

@@ -13,8 +13,9 @@ import {
 } from "@/components/ui/sidebar"
 import Logo from "./logo"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
-import { BadgeCheck, Bell, CircleDollarSign, Home, Ratio, SquareKanban, User } from "lucide-react"
+import { BadgeCheck, ChevronRight } from "lucide-react"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 
 const data = {
@@ -22,37 +23,37 @@ const data = {
     {
       title: "Dashboard",
       url: "/",
-      icon: Home,
+      icon: '/icons/transaction.svg',
       items: [],
     },
     {
       title: "User Management",
       url: "/user-management",
-      icon: User,
+      icon: '/icons/user.svg',
       items: [],
     },
     {
       title: "Vendor Management",
       url: "#",
-      icon: Ratio,
+      icon: '/icons/cleaning-bucket.svg',
       items: [],
     },
     {
       title: "Transactions",
       url: "#",
-      icon: CircleDollarSign,
+      icon: '/icons/transaction.svg',
       items: [],
     },
     {
       title: "Analytic & Reporting",
       url: "#",
-      icon: SquareKanban,
+      icon: '/icons/analytics-01.svg',
       items: [],
     },
     {
       title: "Notifications",
       url: "#",
-      icon: Bell,
+      icon: '/icons/notification-03.svg',
       items: [],
     },
   ],
@@ -71,9 +72,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem key={item.title} className="flex items-center">
             {pathname === item.url && <div className="w-[4px] h-[20px] bg-[#0BA5EC] rounded-tr-[4px] rounded-br-[4px]"></div>}
             <SidebarMenuButton asChild isActive={pathname === item.url}>
-              <a href={item.url} className="ml-4">
-                <item.icon />
-                {item.title}
+              <a href={item.url} className="ml-4 felx justify-between">
+                <span className="flex items-center gap-2">
+                  <Image src={item.icon} alt={item.title} height={20} width={20} />
+                  {item.title}
+                </span>
+                {pathname === item.url && <ChevronRight color="#525866" />}
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
