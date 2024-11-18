@@ -20,18 +20,18 @@ const Table: React.FC<TableProps> = ({ data }) => {
   };
 
   return (
-    <div className="overflow-x-auto mt-4">
+    <div className="overflow-x-auto mt-5">
       <table className="w-full table-auto text-sm">
         <thead>
           <tr className="bg-[#E0F2FE]">
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Transaction ID <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Transaction Type <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Date & Time <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
-            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866]'>Amount <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>UserName <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>VendorName <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
-            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866]'>Exc. Rate <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
-            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866]'>Status <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Transaction ID <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Transaction Type <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Date & Time <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Amount <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>UserName <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>VendorName <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-right"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Exc. Rate <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
+            <th className="px-3 py-2 text-left"><span className='flex items-center gap-1 text-[#525866] whitespace-nowrap'>Status <Image src={'/icons/sorting-icons.svg'} alt='sort' width={20} height={20} /></span></th>
             <th className="py-2 text-center"></th>
           </tr>
         </thead>
@@ -39,15 +39,15 @@ const Table: React.FC<TableProps> = ({ data }) => {
           {data.map((transaction) => (
             <tr
               key={transaction.transactionId}
-              className={`border-b`}
+              className={`border-b text-[12px] text-[#0A0D14] font-normal`}
             >
-              <td className="px-4 py-2 text-left">{transaction.transactionId}</td>
-              <td className="px-4 py-2 text-left">{transaction.transactionType}</td>
-              <td className="px-4 py-2 text-left">{transaction.dateAndTime}</td>
-              <td className="px-4 py-2 text-right">{transaction.amount}</td>
-              <td className="px-4 py-2 text-left">{transaction.userName}</td>
-              <td className="px-4 py-2 text-left">{transaction.vendorName}</td>
-              <td className="px-4 py-2 text-right">{transaction.exchangeRate}</td>
+              <td className="px-4 py-2 text-left whitespace-nowrap">{transaction.transactionId}</td>
+              <td className="px-4 py-2 text-left whitespace-nowrap">{transaction.transactionType}</td>
+              <td className="px-4 py-2 text-left whitespace-nowrap">{transaction.dateAndTime}</td>
+              <td className="px-4 py-2 text-right whitespace-nowrap">{transaction.amount}</td>
+              <td className="px-4 py-2 text-left whitespace-nowrap">{transaction.userName}</td>
+              <td className="px-4 py-2 text-left whitespace-nowrap">{transaction.vendorName}</td>
+              <td className="px-4 py-2 text-right whitespace-nowrap">{transaction.exchangeRate}</td>
               <td
                 className={`px-4 py-2 text-left ${
                   transaction.status === 'Completed'
@@ -55,7 +55,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
                     : transaction.status === 'Cancelled'
                     ? 'text-red-500'
                     : 'text-yellow-500'
-                }`}
+                } whitespace-nowrap`}
               >
                 {transaction.status}
               </td>

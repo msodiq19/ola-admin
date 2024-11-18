@@ -13,10 +13,10 @@ export function AuthAside() {
       />
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="absolute top-[70%] left-[50%] -translate-x-[50%] w-2/3 mx-auto text-center text-white">
-        <h2 className="font-semibold text-3xl">
+        <h2 className="font-semibold text-3xl mb-[10px]">
           Your Trusted Currency Exchange Hub!
         </h2>
-        <p className="text-xl">
+        <p className="text-lg">
           Experience seamless and secure currency exchanges at the best rates.
         </p>
       </div>

@@ -9,8 +9,8 @@ type IProps = {
 export default function Logo(props: IProps) {
   const { width = 50, height = 50 } = props;
   return (
-    <div>
+    <a href="/">
       <Image src={"/logo.svg"} alt="ola-logo" height={height} width={width} />
-    </div>
+    </a>
   );
 }

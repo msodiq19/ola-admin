@@ -20,7 +20,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
   };
 
   return (
-    <div className="overflow-x-auto mt-4">
+    <div className="overflow-x-auto mt-5">
       <table className="min-w-full table-auto text-sm">
         <thead>
           <tr className="bg-[#E0F2FE]">
@@ -39,7 +39,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
           {data.map((user) => (
             <tr
               key={user.userId}
-              className={`border-b`}
+              className={`border-b text-[#0A0D14] text-[12px] font-medium`}
             >
               <td className="px-4 py-2 text-left whitespace-nowrap">{user.userId}</td>
               <td className="px-4 py-2 text-left whitespace-nowrap">{user.name}</td>

@@ -67,7 +67,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader className="mx-8 mt-4">
         <Logo width={100} height={100} />
       </SidebarHeader>
-      <SidebarContent className="mx-4 mt-8">
+      <SidebarContent className="mx-4 mt-6">
         {data.navMain.map((item) => (
           <SidebarMenuItem key={item.title} className="flex items-center">
             {pathname === item.url && <div className="w-[4px] h-[20px] bg-[#0BA5EC] rounded-tr-[4px] rounded-br-[4px]"></div>}
